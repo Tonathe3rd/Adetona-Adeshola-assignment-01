@@ -11,19 +11,27 @@ const assignment = {};
  *
  * If you did Challenge - 1, remove the comment in the line just after this function
  *
- * @param {Number} destination is the stopping number
+ * @param {Number} 
  * @returns number the sum of the numbers from 1 to destination
  */
+
+
 function sumOfNumbersTo(destination) {
+    if (destination <= 1) {
+        return 0; // Invalid input, return 0
+    }
+
     let sum = 0;
-    return sum
+    for (let i = 1; i <= destination; i++) {
+        sum += i;
+    }
+    return sum;
 }
 
-
-// assignment.sumOfNumbersTo = sumOfNumbersTo;
+assignment.sumOfNumbersTo = sumOfNumbersTo;
 
 /**
- * Challenge - 2
+ *  Challenge - 2
  *
  * Calculate count, sum and put in an array the even numbers from 1 to a destination. Object keys are count, sum, arrayOfEvenNumbers.
  *
@@ -63,16 +71,21 @@ function countEvenNumbersWithin(destination) {
  *
  * See https://www.thoughtco.com/celcius-to-farenheit-formula-609227 for the conversion formula
  *
- * @param {Array} arrayOfNumbers the array containing temperatures in Celsius to be converted
+ * @param {Array}
  * @returns Array the converted temperatures in Fahrenheit
  */
+
 function celsiusToFahrenheit(arrayOfNumbers) {
     let result = [];
-
+    // let result = (celsius * 1.8) + 32
+    for (celsius of arrayOfNumbers){	
+        result.push(Math.trunc(celsius * 9/5 + 32));
+      }
     return result;
+    //°F = (°C × 9/5) + 32
 }
 
-// assignment.celsiusToFahrenheit = celsiusToFahrenheit;
+assignment.celsiusToFahrenheit = celsiusToFahrenheit;
 
 // ========================
 // DO NOT EDIT THIS BLOCK
